@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="mx-auto" style="width: 400px;">
+  <h5 class="h1">
+    Our spells</h5>
+</div>
+<app-loading *ngIf="loading" class="m-5"></app-loading>
+<div  class="card-columns m-5 animated fadeIn" >
+
+  <div  *ngFor= "let item of spells" class="card puntero">
+    <img src="../../../assets/img/spell.jpg" class="card-img-top" >
+    <div class="card-body">
+      <h5 class="card-title">{{item.spell}}</h5>
+      <p class="card-text">{{item.effect}} </p>
+      <p class="card-text"><small class="text-muted">Type: {{item.type}}</small></p>
+    </div>
+  </div>
+
+</div>
+
