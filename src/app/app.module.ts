@@ -13,6 +13,11 @@ import{ ROUTES} from './app.routes'
 import { from } from 'rxjs';
 import { RouterModule } from '@angular/router';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CharactersComponent } from './components/characters/characters/characters.component';
+import { CharacterDetailComponent } from './components/characters/character-detail/character-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +25,18 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     LoadingComponent,
     NavbarComponent,
-    CardsComponent
+    CardsComponent,
+    CharactersComponent,
+    CharacterDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES,{useHash: true})
+    BrowserModule,
+    NgxPaginationModule,
+    RouterModule.forRoot(ROUTES,{useHash: true}),
+    BrowserAnimationsModule
   ],
   providers: [
 

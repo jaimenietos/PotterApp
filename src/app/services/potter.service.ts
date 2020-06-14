@@ -22,4 +22,16 @@ export class PotterService {
    return  this.getQuery('spells?')
                 .pipe( map( data => data));
   }
+
+  getCharacters(){
+
+    return  this.getQuery('characters?')
+                 .pipe( map( data => data));
+   }
+
+   getCharacter(_id: string){
+
+    return  this.getQuery(`characters/${_id}?`)
+                 .pipe( map( data => data));
+   }
 }

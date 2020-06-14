@@ -3,16 +3,16 @@
     Our spells</h5>
 </div>
 <app-loading *ngIf="loading" class="m-5"></app-loading>
-<div  class="card-columns m-5 animated fadeIn" >
 
-  <div  *ngFor= "let item of spells" class="card puntero">
-    <img src="../../../assets/img/spell.jpg" class="card-img-top" >
-    <div class="card-body">
-      <h5 class="card-title">{{item.spell}}</h5>
-      <p class="card-text">{{item.effect}} </p>
+
+<ul class="list-unstyled m-5">
+  <li *ngFor= "let item of collection | paginate: { itemsPerPage: 10, currentPage: p }"  class="media m-5">
+    <img class="sm" src="../../../assets/img/icon.png" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{item.spell}}</h5>
+      {{item.effect}}
       <p class="card-text"><small class="text-muted">Type: {{item.type}}</small></p>
     </div>
-  </div>
-
-</div>
-
+  </li>
+  <pagination-controls class="m-5" (pageChange)="p = $event"></pagination-controls>
+</ul>
