@@ -34,4 +34,17 @@ export class PotterService {
     return  this.getQuery(`characters/${_id}?`)
                  .pipe( map( data => data));
    }
+
+   getHouses(){
+
+    return  this.getQuery('houses?')
+                 .pipe( map( data => data));
+   }
+
+   getHouse(_id: string){
+
+    return  this.getQuery(`houses/${_id}?`)
+                 .pipe( map( data => data));
+   }
+
 }

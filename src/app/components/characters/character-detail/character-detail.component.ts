@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PotterService } from 'src/app/services/potter.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,8 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 export class CharacterDetailComponent  {
 
   character: any;
-  firtsStories: any[] = [];
-  url: string;
   loading : boolean;
 
   constructor( private router: ActivatedRoute, private potter: PotterService) {
@@ -25,9 +23,8 @@ export class CharacterDetailComponent  {
 
    getCharacter(id: string){
     this.potter.getCharacter(id)
-          .subscribe( hero => {
-            console.log(hero);
-            this.character = hero;
+          .subscribe( data => {
+            this.character = data;
             this.loading = false;
           })
 }

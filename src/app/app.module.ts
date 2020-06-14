@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CharactersComponent } from './components/characters/characters/characters.component';
 import { CharacterDetailComponent } from './components/characters/character-detail/character-detail.component';
+import { HousesComponent } from './components/houses/houses/houses.component';
+import { HouseDetailComponent } from './components/houses/house-detail/house-detail.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { CharacterDetailComponent } from './components/characters/character-deta
     NavbarComponent,
     CardsComponent,
     CharactersComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    HousesComponent,
+    HouseDetailComponent
   ],
   imports: [
     BrowserModule,
