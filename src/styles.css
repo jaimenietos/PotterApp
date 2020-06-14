@@ -13,6 +13,20 @@ hr {
   border-color: white;
 }
 
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 85.63px);
+  background: url(../src/assets/img/hogsmeade.jpg);
+  background-size: cover;
+}
+
+.home-button {
+  background: #873436;
+  color: white;
+  border: none;
+}
 .puntero {
   cursor: pointer;
 }

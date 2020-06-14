@@ -10,7 +10,7 @@ export class CharacterDetailComponent  {
 
   character: any;
   loading : boolean;
-
+  p: number = 1;
   constructor( private router: ActivatedRoute, private potter: PotterService) {
 
     this.loading = true,

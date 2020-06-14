@@ -1,18 +1,4 @@
-<div class="mx-auto" style="width: 400px;">
-  <h5 class="h1">
-    Our spells</h5>
-</div>
-<app-loading *ngIf="loading" class="m-5"></app-loading>
+<section class="home">
 
-
-<ul class="list-unstyled m-5">
-  <li *ngFor= "let item of collection | paginate: { itemsPerPage: 10, currentPage: p }"  class="media m-5">
-    <img class="sm" src="../../../assets/img/icon.png" alt="Generic placeholder image">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">{{item.spell}}</h5>
-      {{item.effect}}
-      <p class="card-text"><small class="text-muted">Type: {{item.type}}</small></p>
-    </div>
-  </li>
-  <pagination-controls class="m-5" (pageChange)="p = $event"></pagination-controls>
-</ul>
+  <button type="button" class="btn btn-danger ">Welcome to Magician School Education</button>
+</section>

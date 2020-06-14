@@ -10,6 +10,7 @@ export class HouseDetailComponent  {
 
   house: any ;
   loading : boolean;
+  p: number = 1;
   constructor(private router: ActivatedRoute, private potter: PotterService) {
     this.loading = true,
     this.router.params.subscribe( params => {

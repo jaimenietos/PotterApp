@@ -13,7 +13,7 @@ export class PotterService {
 
   getQuery( query: string){
 
-    const url = `${environment.servicioApi}${query}${environment.apiKey}`;
+    const url = `${environment.apiUrl}${query}${environment.apiKey}`;
     return this.http.get(url);
   }
 
@@ -29,9 +29,9 @@ export class PotterService {
                  .pipe( map( data => data));
    }
 
-   getCharacter(_id: string){
+   getCharacter(id: string){
 
-    return  this.getQuery(`characters/${_id}?`)
+    return  this.getQuery(`characters/${id}?`)
                  .pipe( map( data => data));
    }
 
@@ -41,9 +41,9 @@ export class PotterService {
                  .pipe( map( data => data));
    }
 
-   getHouse(_id: string){
+   getHouse(id: string){
 
-    return  this.getQuery(`houses/${_id}?`)
+    return  this.getQuery(`houses/${id}?`)
                  .pipe( map( data => data));
    }
 

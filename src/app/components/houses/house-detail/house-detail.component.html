@@ -1,40 +1,48 @@
-<app-loading *ngIf="loading"></app-loading>
-<div class="row animated fadeIn" *ngIf="!loading">
+<div class="container m-5">
+  <app-loading *ngIf="loading"></app-loading>
+  <div class="row animated fadeIn" *ngIf="!loading">
 
-  <div class="col-2">
-      <img src="../../../../assets/img/house.png" class="img-thumbnail img-circle">
+    <div class="col-2">
+        <img src="../../../../assets/img/house.png" class="img-thumbnail img-circle">
+    </div>
+    <div class="col">
+     <h3>{{house.name}}</h3>
+      <p class="card-text">
+        <small class="text-muted">Mascot: {{house.mascot}}</small><br>
+          <small class="text-muted">Head of house: {{house.headOfHouse}}</small><br>
+          <small class="text-muted">House Ghost: {{house.houseGhost}}</small><br>
+          <small class="text-muted">Founder: {{house.founder}}</small><br>
+          <small class="text-muted">School: {{house.school}}</small><br>
+
+      </p>
+    </div>
+
+    <div class="col-4 text-right">
+
+      <button routerLink="/houses" class="btn btn-outline-danger">Back</button>
+    </div>
+
+
+
   </div>
-  <div class="col">
-   <h3>{{house.name}}</h3>
-    <p class="card-text">
-      <small class="text-muted">Mascot: {{house.mascot}}</small><br>
-        <small class="text-muted">Head of house: {{house.headOfHouse}}</small><br>
-        <small class="text-muted">House Ghost: {{house.houseGhost}}</small><br>
-        <small class="text-muted">Founder: {{house.founder}}</small><br>
-        <small class="text-muted">School: {{house.school}}</small><br>
+  <div class="row animated fadeIn" *ngIf="!loading">
+    <ul class="list-unstyled m-5">
+      <li  class="media m-5">
 
-    </p>
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">Members <span class="badge badge-danger badge-pill">{{house.members.length}}</span> </h5>
+
+
+
+        </div>
+      </li>
+      <li  *ngFor= "let item of house.members | paginate: { itemsPerPage: 10, currentPage: p }"  class="media">
+        <img class="sm" src="../../../assets/img/charactermd.png" alt="Generic placeholder image">
+          <h5 class="mt-0 mb-1">{{item.name}}</h5>
+      </li>
+      <pagination-controls class="m-5" (pageChange)="p = $event"></pagination-controls>
+    </ul>
+
   </div>
-
-  <div class="col-4 text-right">
-
-    <button routerLink="/houses" class="btn btn-outline-danger">Back</button>
-  </div>
-
-
-
 </div>
-<div class="row animated fadeIn" *ngIf="!loading">
-  <ul class="list-unstyled m-5">
-    <li  *ngFor= "let item of house.members | paginate: { itemsPerPage: 10, currentPage: p }"  class="media m-5">
-      <img class="sm" src="../../../assets/img/charactermd.png" alt="Generic placeholder image">
-      <div class="media-body">
-        <h5 class="mt-0 mb-1">{{item.name}}</h5>
 
-
-      </div>
-    </li>
-    <pagination-controls class="m-5" (pageChange)="p = $event"></pagination-controls>
-  </ul>
-
-</div>

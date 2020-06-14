@@ -19,6 +19,7 @@ import { CharactersComponent } from './components/characters/characters/characte
 import { CharacterDetailComponent } from './components/characters/character-detail/character-detail.component';
 import { HousesComponent } from './components/houses/houses/houses.component';
 import { HouseDetailComponent } from './components/houses/house-detail/house-detail.component';
+import { SpellsComponent } from './components/spells/spells.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HouseDetailComponent } from './components/houses/house-detail/house-det
     CharactersComponent,
     CharacterDetailComponent,
     HousesComponent,
-    HouseDetailComponent
+    HouseDetailComponent,
+    SpellsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  servicioApi:"https://www.potterapi.com/v1/",
+  apiUrl:"https://www.potterapi.com/v1/",
   apiKey:"key=$2a$10$MzKvfYMcw5IC80IzsRzF0ucmz3dO5cF8xPqjr8fKlwL/YM1iiimuy"
 };
 

@@ -4,9 +4,11 @@ import { CharactersComponent } from './components/characters/characters/characte
 import { CharacterDetailComponent } from './components/characters/character-detail/character-detail.component';
 import { HousesComponent } from './components/houses/houses/houses.component';
 import { HouseDetailComponent } from './components/houses/house-detail/house-detail.component';
+import { SpellsComponent } from './components/spells/spells.component';
 
 export const ROUTES: Routes =[
   { path:'home', component: HomeComponent},
+  { path:'spells', component: SpellsComponent},
   { path:'characters', component: CharactersComponent},
   { path:'character/:id', component: CharacterDetailComponent},
   { path:'houses', component: HousesComponent},

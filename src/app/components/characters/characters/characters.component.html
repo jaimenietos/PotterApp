@@ -1,25 +1,28 @@
-<div class="mx-auto" style="width: 400px;">
-  <h5 class="h1">
-    Our Characters</h5>
+<div class="container m-5">
+  <div  style="width: 400px;">
+    <h5 class="h1">
+      Our Characters  <span class="badge badge-danger badge-pill">{{collection.length}}</span></h5>
+  </div>
+
+  <app-loading *ngIf="loading" class="m-5"></app-loading>
+
+
+  <ul class="list-unstyled m-5">
+    <li (click)="seeCharacter(item)" *ngFor= "let item of collection | paginate: { itemsPerPage: 10, currentPage: p }"  class="media ">
+      <img class="sm" src="../../../assets/img/character.png" alt="Generic placeholder image">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1">{{item.name}}</h5>
+        <p class="card-text">
+          <small class="text-muted">Role: {{item.role}}</small><br>
+          <small class="text-muted">House: {{item.house}}</small><br>
+
+
+        </p>
+
+      </div>
+    </li>
+    <pagination-controls class="m-5" (pageChange)="p = $event"></pagination-controls>
+  </ul>
+
 </div>
 
-<app-loading *ngIf="loading" class="m-5"></app-loading>
-
-
-<ul class="list-unstyled m-5">
-  <li (click)="seeCharacter(item)" *ngFor= "let item of collection | paginate: { itemsPerPage: 10, currentPage: p }"  class="media m-5">
-    <img class="sm" src="../../../assets/img/character.png" alt="Generic placeholder image">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">{{item.name}}</h5>
-      <p class="card-text">
-        <small class="text-muted">Role: {{item.role}}</small><br>
-        <small class="text-muted">House: {{item.house}}</small><br>
-        <small class="text-muted">School: {{item.school}}</small><br>
-        <small class="text-muted">Specie: {{item.species}}</small><br>
-
-      </p>
-
-    </div>
-  </li>
-  <pagination-controls class="m-5" (pageChange)="p = $event"></pagination-controls>
-</ul>
