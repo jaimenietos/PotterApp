@@ -35,8 +35,12 @@
 
 
         </div>
+        <div class="col">
+          <input  type="text" [(ngModel)]="filterPost"  class="form-control" placeholder="Search Member">
+        </div>
+
       </li>
-      <li  *ngFor= "let item of house.members | paginate: { itemsPerPage: 10, currentPage: p }"  class="media">
+      <li (click)="seeCharacter(item)"  *ngFor= "let item of house.members| filterMember:filterPost | paginate: { itemsPerPage: 10, currentPage: p }"  class="media">
         <img class="sm" src="../../../assets/img/charactermd.png" alt="Generic placeholder image">
           <h5 class="mt-0 mb-1">{{item.name}}</h5>
       </li>

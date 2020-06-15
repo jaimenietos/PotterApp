@@ -13,6 +13,7 @@ import{ ROUTES} from './app.routes'
 import { from } from 'rxjs';
 import { RouterModule } from '@angular/router';
 
+//Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CharactersComponent } from './components/characters/characters/characters.component';
@@ -20,7 +21,8 @@ import { CharacterDetailComponent } from './components/characters/character-deta
 import { HousesComponent } from './components/houses/houses/houses.component';
 import { HouseDetailComponent } from './components/houses/house-detail/house-detail.component';
 import { SpellsComponent } from './components/spells/spells.component';
-
+import { FilterMemberPipe } from './pipes/filter-member.pipe';
+import { FormsModule}  from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,11 +35,13 @@ import { SpellsComponent } from './components/spells/spells.component';
     CharacterDetailComponent,
     HousesComponent,
     HouseDetailComponent,
-    SpellsComponent
+    SpellsComponent,
+    FilterMemberPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     BrowserModule,
     NgxPaginationModule,
