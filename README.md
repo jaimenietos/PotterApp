@@ -20,7 +20,7 @@ Se debe hacer la instalacion de los modulos Node.js para hacer dicha instalacion
 - Ejecutar el comando 'npm install'(Instalacion de modulos Node.js).
 - Una vez instalados los modulos.
 - Ejecutar comando 'ng serve -o'.
-- Abrir navegador con la URL que sale en la terminal Ej:(localhost:4200/#/home).
+
 
 
 Temas desconocidos
